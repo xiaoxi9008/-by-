@@ -1,4 +1,27 @@
--- 基础服务定义
+local Env = getfenv()
+
+local LogService = game:GetService("LogService")
+local getconnections = Env.getconnections
+local MessageOut = "MessageOut"
+local cons = getconnections(LogService[MessageOut])
+if cons then
+    for _, v in pairs(cons) do
+        pcall(function() v:Disable() end)
+    end
+end
+
+local function cleanupConnections()
+    pcall(function()
+        
+        for _, conn in ipairs(getconnections(LogService.MessageOut) or {}) do
+            pcall(function() conn:Disable() end)
+        end
+    end)
+end
+cleanupConnections()
+
+print("✅ 环境净化完成，LogService 干扰已禁用")
+
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 local RunService = game:GetService("RunService")
@@ -27,7 +50,6 @@ local Window = Library:CreateWindow({
     ["Title"] = "<font color='#FFFFFF'>沙</font><font color='#CCCCCC'>脚</font><font color='#999999'>本</font>",
     ["Author"] = "<font color='#666666'>沙</font><font color='#444444'>记</font> | by小西",
     HideSearchBar = false,
-})
 
 Window:EditOpenButton({
     Title = "<font color='#FFFFFF'>沙</font><font color='#CCCCCC'>脚</font><font color='#999999'>本</font>",
@@ -107,9 +129,6 @@ end
 
 startGrayscaleBorder()
 
--------------------------------------------------------------------------
--- Tab: 公告 (Announcements)
--------------------------------------------------------------------------
 local Tab_Notice = Window:Tab({
     ["Locked"] = false,
     ["Title"] = "公告",
@@ -964,10 +983,10 @@ local Tab_Ink = Window:Tab({
 })
 
 Tab_Ink:Button({
-    ["Title"] = "XA",
-    ["Desc"] = "好用到爆",
+    ["Title"] = "XA（目前最强）",
+    ["Desc"] = "国人汉化",
     ["Callback"] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/refs/heads/main/Games/墨水游戏.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/fningna51-stack/-/main/%E6%81%B6%E4%BD%9C%E5%89%A7ax%E6%B1%89%E5%8C%96"))()
     end
 })
 
@@ -1102,6 +1121,31 @@ Tab_GB:Button({
     end
 })
 
+Tab_GB:Button({
+    ["Title"] = "WTB",
+    ["Desc"] = "国人脚本",
+    ["Callback"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/S-WTB/Z/refs/heads/main/GB"))()
+    end
+})
+
+Tab_GB:Button({
+    ["Title"] = "Skin HuB",
+    ["Desc"] = "国人脚本",
+    ["Callback"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wzhxll/Invincible-Willow-Leaf/refs/heads/main/README.md"))()
+
+    end
+})
+
+Tab_GB:Button({
+    ["Title"] = "STAR",
+    ["Desc"] = "国人脚本",
+    ["Callback"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Twbtx/tiamxiabuwu/main/STAR%20GB%20V%201-obfuscated.lua"))()
+    end
+})
+
 -------------------------------------------------------------------------
 -- Tab: 伐木大亨2 (Lumber Tycoon 2)
 -------------------------------------------------------------------------
@@ -1116,6 +1160,14 @@ Tab_Lumber:Button({
     ["Desc"] = "白脚本",
     ["Callback"] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/Kavo-Ui/main/%E4%BC%90%E6%9C%A8%E5%A4%A7%E4%BA%A82.lua", true))()
+    end
+})
+
+Tab_Lumber:Button({
+    ["Title"] = "伐木大亨（国人汉化）",
+    ["Desc"] = "外网脚本",
+    ["Callback"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/UWU/main/LuaWare.lua", true))()
     end
 })
 
