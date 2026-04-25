@@ -50,7 +50,7 @@ local Window = Library:CreateWindow({
     ["Title"] = "<font color='#FFFFFF'>沙</font><font color='#CCCCCC'>脚</font><font color='#999999'>本</font>",
     ["Author"] = "<font color='#666666'>沙</font><font color='#444444'>记</font> | by小西",
     HideSearchBar = false,
-
+})    
 Window:EditOpenButton({
     Title = "<font color='#FFFFFF'>沙</font><font color='#CCCCCC'>脚</font><font color='#999999'>本</font>",
     CornerRadius = UDim.new(16,16),
