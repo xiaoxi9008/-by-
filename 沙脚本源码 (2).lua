@@ -25,7 +25,7 @@ local AlmostBlack = Color3.fromHex("#333333")
 local Window = Library:CreateWindow({
     ["Folder"] = "MyTestHub",
     ["Title"] = "<font color='#FFFFFF'>沙</font><font color='#CCCCCC'>脚</font><font color='#999999'>本</font>",
-    ["Author"] = "<font color='#666666'>沙</font><font color='#444444'>季</font> | by小西",
+    ["Author"] = "<font color='#666666'>沙</font><font color='#444444'>记</font> | by小西",
     HideSearchBar = false,
 })
 
@@ -42,6 +42,12 @@ Window:EditOpenButton({
     }),
     Draggable = true,
 })
+
+Window:Tag({
+        Title = "沙脚本",
+        Radius = 4,
+        Color = Color3.fromHex("#ffffff"),
+    })
 
 local function startGrayscaleBorder()
     local mainFrame = Window.UIElements and Window.UIElements.Main
@@ -112,9 +118,9 @@ local Tab_Notice = Window:Tab({
 
 Tab_Notice:Paragraph({
     Title = "欢迎使用 <font color='#FFFFFF'>沙</font><font color='#CCCCCC'>脚</font><font color='#999999'>本</font> 脚本",
-    Desc = "作者：沙季｜复活作者：by小西 | 沙季QQ：3957336350 | 沙脚本QQ群：1026924908",
+    Desc = "作者：沙记｜复活作者：by小西 | 沙季QQ：3957336350 | 沙脚本QQ群：1026924908",
     ImageSize = 50,
-    Thumbnail = "https://raw.githubusercontent.com/xiaoxi9008/XIAOXIBUXINB/refs/heads/main/Image_1774762956572_963.jpg",
+    Thumbnail = "https://raw.githubusercontent.com/xiaoxi9008/-by-/refs/heads/main/Screenshot_2026-04-25-09-25-55-76_99c04817c0de5652397fc8b56c3b3817.jpg",
     ThumbnailSize = 170
 })
 
